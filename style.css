@@ -1,0 +1,364 @@
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface-alt: #1f2937;
+      --text: #c9d1d9;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --accent-soft: rgba(88, 166, 255, 0.15);
+      --border: rgba(148, 163, 184, 0.18);
+      --shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, rgba(88, 166, 255, 0.2), transparent 28%),
+                  radial-gradient(circle at bottom right, rgba(165, 180, 252, 0.16), transparent 24%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 32px;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      position: relative;
+      gap: 32px;
+    }
+
+    header {
+      display: grid;
+      gap: 16px;
+      /* reduce vertical padding to 10px (top/bottom) per request */
+      padding: 10px 200px 10px 32px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    header h1 {
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      letter-spacing: -0.05em;
+    }
+
+    header p {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      color: var(--muted);
+    }
+
+    /* Position the hero image to the right of the centered container without affecting layout */
+    .hero-image {
+      position: absolute;
+      /* keep the image inside the .container, aligned to the right */
+      right: 32px;
+      top: 32px;
+      width: 160px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+      pointer-events: none;
+      user-select: none;
+      z-index: 3;
+    }
+
+    .hero-meta span {
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .search-bar-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: -8px;
+    }
+
+    .search-bar-wrap input {
+      width: min(100%, 560px);
+      padding: 14px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      outline: none;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    .search-bar-wrap input::placeholder {
+      color: var(--muted);
+    }
+
+    .search-bar-wrap input:focus {
+      border-color: rgba(88, 166, 255, 0.45);
+      box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.16);
+    }
+
+    .slideshow-shell {
+      display: grid;
+      gap: 16px;
+    }
+
+    .slide {
+      display: none;
+      animation: fadeIn 0.25s ease;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .slide-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding-top: 8px;
+    }
+
+    .slide-arrow {
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .slide-arrow:hover {
+      background: rgba(88, 166, 255, 0.15);
+      transform: translateY(-1px);
+    }
+
+    .slide-dots {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+      flex: 1;
+      flex-wrap: wrap;
+    }
+
+    .slide-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .slide-dot.active {
+      background: var(--accent);
+      transform: scale(1.1);
+      border-color: rgba(88, 166, 255, 0.65);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .command-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .command-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(88, 166, 255, 0.4);
+    }
+
+    .command-card h2 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .command-card p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .commands {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .command {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.98rem;
+      color: #ffffff;
+      flex: 1;
+    }
+
+    .command strong {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      padding: 8px 12px;
+      border-radius: 12px;
+      background: rgba(88, 166, 255, 0.12);
+      color: var(--accent);
+      border: 1px solid rgba(88, 166, 255, 0.2);
+      white-space: nowrap;
+    }
+
+    .command small {
+      color: var(--muted);
+    }
+
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid rgba(88, 166, 255, 0.25);
+      background: rgba(88, 166, 255, 0.12);
+      color: var(--accent);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .copy-btn:hover {
+      background: rgba(88, 166, 255, 0.2);
+      transform: translateY(-1px);
+    }
+
+    .copy-btn .copy-icon {
+      font-size: 0.95rem;
+      line-height: 1;
+    }
+
+    .copy-btn.copied {
+      background: rgba(0, 189, 91, 0.2);
+      color: #22c55e;
+      border-color: rgba(34, 197, 94, 0.35);
+    }
+
+    .commands.is-hidden,
+    .slide.is-hidden {
+      display: none;
+    }
+
+    .terminal {
+      background: #020409;
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      padding: 22px;
+      border-radius: 22px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      color: #c9d1d9;
+      overflow-x: auto;
+    }
+
+    .terminal code {
+      display: block;
+      white-space: pre;
+    }
+
+    .terminal .prompt {
+      color: #00bd5b;
+    }
+
+    .colon {
+      color: #ffffff;
+    }
+
+    .directory {
+      color: #0080ff;
+    }
+
+    .dollar-sign {
+      color: #ffffff;
+    }
+
+    .executable {
+      color: #37ff00;
+    }
+
+    .mp3 {
+      color: #00fff2;
+    }
+
+    .png {
+      color: #c300ff;
+    }
+
+    .mp4 {
+      color: #c300ff;
+    }
+
+    .footer {
+      padding: 20px 0 8px;
+      display: flex;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 20px;
+      }
+
+      .card {
+        padding: 20px;
+      }
+      /* hide decorative hero image on small screens so it doesn't overlap content */
+      .hero-image {
+        display: none;
+      }
+      /* restore header padding on small screens */
+      header {
+        padding-right: 32px;
+      }
+    }
+
+    /* adjust image placement for medium screens */
+    @media (max-width: 980px) {
+      .hero-image {
+        right: 28px;
+        width: 120px;
+        top: 20px;
+      }
+      header {
+        padding-right: 180px;
+      }
+    }

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linux Tips</title>
+  <link rel="icon" href="images/terminal.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Basic Linux Command Guide</h1>
+        <h3>New to Linux? We've got you covered.</h3>
+        <p>Learn the essential Linux commands for controlling your Linux system.</p>
+      </div>
+            <div class="hero-meta">
+        <span>Beginner-Friendly</span>
+        <span>Terminal-Basic</span>
+      </div>
+      <img src="images/linux.png" alt="Linux Logo" class="hero-image">
+    </header>
+
+    <section class="search-bar-wrap">
+      <input id="commandSearch" type="search" placeholder="Search a command..." aria-label="Search commands">
+    </section>
+
+    <section class="slideshow-shell">
+      <div class="slide active">
+        <article class="command-card">
+          <h2>Filesystem Navigation</h2>
+          <div class="commands"><div class="command"><strong>pwd</strong><small>Print working directory</small></div></div>
+          <div class="commands"><div class="command"><strong>ls</strong><small>List files and directories ('-a' to include Hidden files and directories)</small></div></div>
+          <div class="commands"><div class="command"><strong>cd</strong><small>Change directory ('..' to go 1 step backwards)</small></div></div>
+          <div class="commands"><div class="command"><strong>tree</strong><small>View directory tree of the current directory</small></div></div>
+        </article>
+      </div>
+
+      <div class="slide">
+        <article class="command-card">
+          <h2>File &amp; Directory Operations</h2>
+          <div class="commands"><div class="command"><strong>mkdir</strong><small>Create new directory</small></div></div>
+          <div class="commands"><div class="command"><strong>touch</strong><small>Create empty file or update timestamp</small></div></div>
+          <div class="commands"><div class="command"><strong>cp</strong><small>Copy files ('-r' for directories)</small></div></div>
+          <div class="commands"><div class="command"><strong>mv</strong><small>Move or rename items</small></div></div>
+          <div class="commands"><div class="command"><strong>rm</strong><small>Remove files or directories (⚠️ Removes Permanently without sending to Trash)</small></div></div>
+        </article>
+      </div>
+
+      <div class="slide">
+        <article class="command-card">
+          <h2>Inspect &amp; Search</h2>
+          <div class="commands"><div class="command"><strong>cat</strong><small>Print file contents</small></div></div>
+          <div class="commands"><div class="command"><strong>less</strong><small>Page through text files</small></div></div>
+          <div class="commands"><div class="command"><strong>grep</strong><small>Search within files</small></div></div>
+          <div class="commands"><div class="command"><strong>find</strong><small>Locate files by name or attributes</small></div></div>
+          <div class="commands"><div class="command"><strong>locate</strong><small>Quick search using database</small></div></div>
+        </article>
+      </div>
+
+      <div class="slide">
+        <article class="command-card">
+          <h2>Permissions &amp; Ownership</h2>
+          <div class="commands"><div class="command"><strong>whoami</strong><small>Print the Current User</small></div></div>
+          <div class="commands"><div class="command"><strong>groups</strong><small>List User's Privileges (add username to see other user's privileges  )</small></div></div>
+          <div class="commands"><div class="command"><strong>chmod</strong><small>Change file permissions</small></div></div>
+          <div class="commands"><div class="command"><strong>chown</strong><small>Change file owner or group</small></div></div>
+          <div class="commands"><div class="command"><strong>sudo</strong><small>Run command with elevated privileges ('su' for root access)</small></div></div>
+        </article>
+      </div>
+
+      <div class="slide">
+        <article class="command-card">
+          <h2>System Monitoring</h2>
+          <div class="commands"><div class="command"><strong>top</strong><small>Interactive process viewer</small></div></div>
+          <div class="commands"><div class="command"><strong>htop</strong><small>Advanced process monitor</small></div></div>
+          <div class="commands"><div class="command"><strong>ps</strong><small>List running processes ('aux' to include background processes)</small></div></div>
+          <div class="commands"><div class="command"><strong>kill</strong><small>Terminate processes ('pkill' to)</small></div></div>
+        </article>
+      </div>
+
+      <div class="slide">
+        <article class="command-card">
+          <h2>Disk &amp; Resource Info</h2>
+          <div class="commands"><div class="command"><strong>df</strong><small>Show filesystem disk usage (-h to include used storage)</small></div></div>
+          <div class="commands"><div class="command"><strong>du</strong><small>Show directory disk usage</small></div></div>
+          <div class="commands"><div class="command"><strong>free</strong><small>Display memory usage</small></div></div>
+          <div class="commands"><div class="command"><strong>uname -a</strong><small>Show full kernel and system info</small></div></div>
+        </article>
+      </div>
+
+      <div class="slide">
+        <article class="command-card">
+          <h2>Shell Shortcuts</h2>
+          <div class="commands"><div class="command"><strong>echo</strong><small>Bash version of "print" in python (Print text or variables)</small></div></div>
+          <div class="commands"><div class="command"><strong>history</strong><small>Show recent commands used</small></div></div>
+          <div class="commands"><div class="command"><strong>hostname</strong><small>Show device name (add a name to change temporarily)</small></div></div>
+          <div class="commands"><div class="command"><strong>alias</strong><small>Create command shortcuts</small></div></div>
+          <div class="commands"><div class="command"><strong>exit</strong><small>Close The Shell</small></div></div>
+        </article>
+      </div>
+
+      <div class="slide">
+        <article class="command-card">
+          <h2>Package &amp; Network</h2>
+          <div class="commands"><div class="command"><strong>apt update</strong><small>Refresh package lists (recommended with sudo)</small></div></div>
+          <div class="commands"><div class="command"><strong>git</strong><small>Download a GitHub Repository</small></div></div>
+          <div class="commands"><div class="command"><strong>curl</strong><small>Fetch a URL from the shell</small></div></div>
+          <div class="commands"><div class="command"><strong>wget</strong><small>Download files from the web</small></div></div>
+          <div class="commands"><div class="command"><strong>ssh</strong><small>Connect to a remote machine</small></div></div>
+        </article>
+      </div>
+
+      <div class="slide no-copy">
+        <article class="command-card">
+          <h2>Terminal Keyboard Shortcuts Pt.1</h2>
+          <div class="commands"><div class="command"><strong>Ctrl + A</strong><small>Move to the beginning of the line</small></div></div>
+          <div class="commands"><div class="command"><strong>Ctrl + E</strong><small>Move to the end of the line</small></div></div>
+          <div class="commands"><div class="command"><strong>Ctrl + U</strong><small>Delete from cursor to beginning of line</small></div></div>
+          <div class="commands"><div class="command"><strong>Ctrl + K</strong><small>Delete from cursor to end of line</small></div></div>
+          <div class="commands"><div class="command"><strong>Ctrl + Y</strong><small>Paste the last deleted text</small></div></div>
+        </article>
+      </div>
+
+      <div class="slide no-copy">
+        <article class="command-card">
+          <h2>Terminal Keyboard Shortcuts Pt.2</h2>
+          <div class="commands"><div class="command"><strong>Ctrl + Alt + C</strong><small>Copy the selected text</small></div></div>
+          <div class="commands"><div class="command"><strong>Ctrl + Alt + V</strong><small>Paste the copied text</small></div></div>
+          <div class="commands"><div class="command"><strong>Ctrl + B</strong><small>Move backward one character</small></div></div>
+          <div class="commands"><div class="command"><strong>Ctrl + F</strong><small>Move forward one character</small></div></div>
+          <div class="commands"><div class="command"><strong>Alt + B</strong><small>Move backward one word</small></div></div>
+          <div class="commands"><div class="command"><strong>Alt + F</strong><small>Move forward one word</small></div></div>
+        </article>
+      </div>
+
+      <div class="slide-controls">
+        <button class="slide-arrow prev" type="button" aria-label="Previous slide">&lt;</button>
+        <div class="slide-dots">
+          <button class="slide-dot active" type="button" data-slide="0" aria-label="Slide 1"></button>
+          <button class="slide-dot" type="button" data-slide="1" aria-label="Slide 2"></button>
+          <button class="slide-dot" type="button" data-slide="2" aria-label="Slide 3"></button>
+          <button class="slide-dot" type="button" data-slide="3" aria-label="Slide 4"></button>
+          <button class="slide-dot" type="button" data-slide="4" aria-label="Slide 5"></button>
+          <button class="slide-dot" type="button" data-slide="5" aria-label="Slide 6"></button>
+          <button class="slide-dot" type="button" data-slide="6" aria-label="Slide 7"></button>
+          <button class="slide-dot" type="button" data-slide="7" aria-label="Slide 8"></button>
+          <button class="slide-dot" type="button" data-slide="8" aria-label="Slide 9"></button>
+          <button class="slide-dot" type="button" data-slide="9" aria-label="Slide 10"></button>
+        </div>
+        <button class="slide-arrow next" type="button" aria-label="Next slide">&gt;</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Quick Reference Examples: </h2>
+      <div class="terminal">
+        <code>
+<span class="prompt">user@device<span class="colon">:</span><span class="directory">~</span><span class="dollar-sign">$</span></span> whoami
+user
+
+<span class="prompt">user@device<span class="colon">:</span><span class="directory">~</span><span class="dollar-sign">$</span></span> hostname
+device
+
+<span class="prompt">user@device<span class="colon">:</span><span class="directory">~</span><span class="dollar-sign">$</span></span> pwd
+/home/user
+
+<span class="prompt">user@device<span class="colon">:</span><span class="directory">~</span><span class="dollar-sign">$</span></span> ls
+<span class="directory">Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos</span>
+
+<span class="prompt">user@device<span class="colon">:</span><span class="directory">~</span><span class="dollar-sign">$</span></span> cd Desktop
+<span class="prompt">user@device<span class="colon">:</span><span class="directory">~/Desktop</span><span class="dollar-sign">$</span></span>
+
+<span class="prompt">user@device<span class="colon">:</span><span class="directory">~</span><span class="dollar-sign">$</span></span> tree
+<span class="directory">.</span>
+├── <span class="directory">Desktop</span>
+│   └── <span class="executable">executable1.txt</span>
+├── <span class="directory">Documents</span>
+│   └── <span class="executable">executable2.txt</span>
+├── <span class="directory">Downloads</span>
+│   └── <span class="executable">executable3.txt</span>
+├── <span class="directory">Music</span>
+│   └── <span class="mp3">audio4.mp3</span>
+├── <span class="directory">Pictures</span>
+│   └── <span class="png">photo5.png</span>
+├── <span class="directory">Public</span>
+│   └── unexecutable6.txt
+├── <span class="directory">Templates</span>
+│   └── unexecutable7.txt
+└── <span class="directory">Videos</span>
+    └── <span class="mp4">video8.mp4</span>
+
+9 directories, 8 files
+</code>
+      </div>
+    </section>
+    <h4 style="text-align: center">The Linux Experience doesn't end here. Explore more and unlock more commands.</h4>
+  </div>
+</body>
+</html>
