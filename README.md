@@ -1,3 +1,4 @@
+<h1>LinuxTips</h1>
 <a href="https://valt-daizora.github.io/linuxtips">Basic Linux Command Tips</a> for Linux Beginners
 
 New to Linux? We've got you covered!
